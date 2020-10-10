@@ -6,6 +6,7 @@ import RecipeItem from "./RecipeItem";
 import { BASE_URL } from "../../constants/api";
 import Search from "./Search";
 
+
 export default function RecipeList() {
 	const [recipes, setRecipes] = useState([]);
 	const [filteredRecipes, setFilteredRecipes] = useState([]);
@@ -26,7 +27,7 @@ export default function RecipeList() {
 	const filterCards = function(e) {
 		const searchValue = e.target.value.toLowerCase();
 		const filteredArray = recipes.filter(function(char) {
-			const lowerCaseName = char.name.toLowerCase();
+			const lowerCaseName = char.title.toLowerCase();
 			if (lowerCaseName.startsWith(searchValue)) {
 				return true;
 			}
@@ -45,7 +46,7 @@ export default function RecipeList() {
 			<Search handleSearch={filterCards} />
 			<Row>
 				{filteredRecipes.map(recipes => {
-					const { title, thumbnail } = recipes;
+					const { title, thumbnail} = recipes;
 
 					return (
 						<Col sm={3} md={3} key={title}>
