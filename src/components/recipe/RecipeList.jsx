@@ -25,8 +25,8 @@ export default function RecipeList() {
 
 	const filterCards = function(e) {
 		const searchValue = e.target.value.toLowerCase();
-		const filteredArray = recipes.filter(function(char) {
-			const lowerCaseName = char.title.toLowerCase();
+		const filteredArray = recipes.filter(function(recipe) {
+			const lowerCaseName = recipe.title.toLowerCase();
 			if (lowerCaseName.startsWith(searchValue)) {
 				return true;
 			}
