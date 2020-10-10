@@ -17,7 +17,7 @@ export default function RecipeItem({ title, thumbnail, ingredients, url }) {
 }
 
 RecipeItem.propTypes = {
-	title: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
     ingredients: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
