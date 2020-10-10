@@ -10,9 +10,9 @@ import Search from './Search';
 export default function RecipeList() {
 	const [recipes, setRecipes] = useState([]);
 	const [filteredRecipes, setFilteredRecipes] = useState([]);
-	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {
+    const [loading, setLoading] = useState(true);
+    
+    useEffect(() => {
         fetch(BASE_URL)
             .then(response => response.json())
             .then(json => {
@@ -21,7 +21,7 @@ export default function RecipeList() {
             })
             .catch(error => console.log(error))
             .finally(() => setLoading(false));
-	}, []);
+        }, []);
 
 	const filterCards = function(e) {
 		const searchValue = e.target.value.toLowerCase();
