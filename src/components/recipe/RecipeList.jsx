@@ -18,7 +18,6 @@ export default function RecipeList() {
 			.then(json => {
 				setRecipes(json.results);
                 setFilteredRecipes(json.results);
-                console.log(json.results);
 			})
 			.catch(error => console.log(error))
 			.finally(() => setLoading(false));
@@ -46,11 +45,11 @@ export default function RecipeList() {
 			<Search handleSearch={filterCards} />
 			<Row>
 				{filteredRecipes.map(recipes => {
-					const { title, thumbnail} = recipes;
+					const { title, thumbnail, ingredients} = recipes;
 
 					return (
 						<Col sm={3} md={3} key={title}>
-							<RecipeItem title={title} thumbnail={thumbnail} />
+							<RecipeItem title={title} thumbnail={thumbnail} ingredients={ingredients}/>
 						</Col>
 					);
 				})}

@@ -1,13 +1,14 @@
 import React from 'react';
-import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
 
 export default function IngredientList({ingredients}){
+
     return(
-        <Card.Text>{ingredients}</Card.Text>
+    <Card.Text>
+        {
+            ingredients.split(',').map((item, index) => <li key={index}>{item}</li>)
+        }
+    </Card.Text>
     )
 }
 
-IngredientList.propTypes = {
-	ingredients: PropTypes.string.isRequired,
-};
