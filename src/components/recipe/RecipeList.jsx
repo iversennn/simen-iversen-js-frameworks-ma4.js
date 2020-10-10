@@ -13,14 +13,14 @@ export default function RecipeList() {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		fetch(BASE_URL)
-			.then(response => response.json())
-			.then(json => {
+        fetch(BASE_URL)
+            .then(response => response.json())
+            .then(json => {
                 setRecipes(json.results);
                 setFilteredRecipes(json.results);
-			})
-			.catch(error => console.log(error))
-			.finally(() => setLoading(false));
+            })
+            .catch(error => console.log(error))
+            .finally(() => setLoading(false));
 	}, []);
 
 	const filterCards = function(e) {
