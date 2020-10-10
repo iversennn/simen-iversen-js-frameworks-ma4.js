@@ -16,7 +16,7 @@ export default function RecipeList() {
 		fetch(BASE_URL)
 			.then(response => response.json())
 			.then(json => {
-				setRecipes(json.results);
+                setRecipes(json.results);
                 setFilteredRecipes(json.results);
 			})
 			.catch(error => console.log(error))
