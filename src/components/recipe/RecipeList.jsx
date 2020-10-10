@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import Spinner from "react-bootstrap/Spinner";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import RecipeItem from "./RecipeItem";
-import { BASE_URL } from "../../constants/api";
-import Search from "./Search";
+import React, { useState, useEffect } from 'react';
+import Spinner from 'react-bootstrap/Spinner';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import RecipeItem from './RecipeItem';
+import { BASE_URL } from '../../constants/api';
+import Search from './Search';
 
 
 export default function RecipeList() {
@@ -37,7 +37,7 @@ export default function RecipeList() {
 	};
 
 	if (loading) {
-		return <Spinner animation="border" className="spinner" />;
+		return <Spinner animation='border' className='spinner' />;
 	}
 
 	return (
